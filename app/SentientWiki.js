@@ -146,7 +146,7 @@ export default function SentientWiki() {
     <div className={dark ? "dark" : ""}>
       <div className="min-h-dvh bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
         <header className="sticky top-0 z-40 border-b border-zinc-200 bg-white/80 backdrop-blur dark:border-zinc-800 dark:bg-zinc-900/70">
-          <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3">
+          <div className="mx-auto flex max-w-[85rem] items-center gap-3 px-4 py-3">
             <button
               className="inline-flex items-center gap-2 rounded-2xl border border-zinc-200 px-3 py-2 text-sm font-medium hover:bg-zinc-50 dark:border-zinc-800 dark:hover:bg-zinc-800 md:hidden"
               onClick={() => setMobileNavOpen((v) => !v)}
@@ -167,11 +167,11 @@ export default function SentientWiki() {
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-                  placeholder="Tìm kiếm heroes, bản đồ, cập nhật…"
+                  placeholder="Search…"
                   className="w-full rounded-2xl border border-zinc-200 bg-white px-4 py-2 pl-9 text-sm shadow-sm outline-none placeholder:text-zinc-400 focus:ring-2 focus:ring-amber-500 dark:border-zinc-800 dark:bg-zinc-950"
                 />
-                <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 opacity-60" onClick={handleSearch}>
-                  <SearchIcon />
+                <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 opacity-60" >
+                  <SearchIcon onClick={handleSearch}/>
                 </span>
               </label>
             </div>
@@ -188,16 +188,16 @@ export default function SentientWiki() {
                   <span className="inline-flex items-center gap-2"><MoonIcon /> Dark</span>
                 )}
               </button>
-              <button className="hidden rounded-2xl border border-zinc-200 px-3 py-2 text-sm font-medium hover:bg-zinc-50 dark:border-zinc-800 dark:hover:bg-zinc-800 sm:inline-flex">
-                Đăng nhập
-              </button>
+              {/* <button className="hidden rounded-2xl border border-zinc-200 px-3 py-2 text-sm font-medium hover:bg-zinc-50 dark:border-zinc-800 dark:hover:bg-zinc-800 sm:inline-flex">
+                Login
+              </button> */}
             </div>
           </div>
         </header>
 
-        <div className="mx-auto grid max-w-[85rem] grid-cols-1 gap-6 px-4 py-6 md:grid-cols-[260px_1fr] lg:grid-cols-[260px_1fr_320px]">
+        <div className="mx-auto grid max-w-[85rem] grid-cols-1 gap-6 px-4 py-4 md:grid-cols-[260px_1fr] lg:grid-cols-[200px_1fr_300px]">
 
-          <aside className={" inset-y-0 left-0 z-30 w-72 -translate-x-full overflow-y-auto border-r border-zinc-200 bg-white p-4 transition-transform dark:border-zinc-800 dark:bg-zinc-900 md:static md:translate-x-0 md:w-auto md:border-0 md:bg-transparent md:p-0 md:dark:bg-transparent" + (mobileNavOpen ? " translate-x-0" : "")} aria-label="Điều hướng">
+          <aside className={"fixed block sm:hidden top-[70px] inset-y-0 left-0 z-30 w-72 -translate-x-full overflow-y-auto border-r border-zinc-200 bg-white p-4 transition-transform dark:border-zinc-800 dark:bg-zinc-900 md:static md:translate-x-0 md:w-auto md:border-0 md:bg-transparent md:p-0 md:dark:bg-transparent" + (mobileNavOpen ? " translate-x-0" : "")} aria-label="Điều hướng">
             <div className="md:hidden mb-4 flex items-center justify-between sticky sm:top-20 sm:space-y-6 ">
               <span className="text-sm font-semibold opacity-70">Category</span>
               <button
@@ -252,9 +252,43 @@ export default function SentientWiki() {
             </nav>
           </aside>
 
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 space-y-6">
+            <nav className="space-b-5 pr-2 text-sm ">
+              {nav.map((section) => (
+                <div key={section.title}>
+                  <div className="mb-4 px-2 text-[24px] font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
+                    {section.title}
+                  </div>
+                  <ul className="space-y-1">
+                    {section.items.map((it) => (
+                      <li key={it.id}>
+                        <botton
+                          onClick={() => { setMobileNavOpen(false)
+                            setSelectedId(it.component)
+                            setActiveHeading(it.component)}
+                          }
+                          className={
+                            "block rounded-xl px-3 py-2 cursor-pointer hover:bg-zinc-100 dark:hover:bg-zinc-800 " +
+                            (activeHeading === it.component
+                              ? "bg-zinc-100 font-semibold dark:bg-zinc-800"
+                              : "")
+                          }
+                        >
+                          {it.label}
+                        </botton>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </nav>
+            </div>
+          </aside>
+
           <div> {ActiveComponent ? <ActiveComponent /> : <p>Không tìm thấy</p>}</div>
           <aside className="hidden lg:block">
-            <div className="sticky top-20 space-y-6">
+            <div className="sticky top-24 space-y-6">
               <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
                 <div className="border-b border-zinc-200 p-4 text-sm font-semibold dark:border-zinc-800">Event</div>
                 <ul className="p-2">
@@ -275,7 +309,7 @@ export default function SentientWiki() {
         </div>
 
         <footer className="border-t border-zinc-200 bg-white/60 py-8 text-sm dark:border-zinc-800 dark:bg-zinc-900/60">
-          <div className="mx-auto max-w-7xl px-4">
+          <div className="mx-auto max-w-[85rem] px-4">
             <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
               <div>
                 <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">Sentient Wiki</div>
