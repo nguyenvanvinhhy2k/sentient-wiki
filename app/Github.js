@@ -17,7 +17,7 @@ export default function Github() {
           <div className="p-6">
             <h1 className="mb-2 text-2xl font-bold">Builder Community Overview</h1>
             <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-            Sentient Builders are the core contributors who develop, maintain, and expand the Sentient ecosystem. This diverse community includes AI researchers, blockchain developers, infrastructure engineers, and protocol designers working together to create the world's first decentralized AGI.
+            Sentient Builders are the core contributors who develop, maintain, and expand the Sentient ecosystem. This diverse community includes AI researchers, blockchain developers, infrastructure engineers, and protocol designers working together to create the world first decentralized AGI.
             </p>
 
             <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
@@ -58,7 +58,7 @@ export default function Github() {
                   <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4">
                     <h3>Application Developers</h3>
                      <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-                     Developers building applications, tools, and services that leverage the Sentient network's capabilities.
+                     Developers building applications, tools, and services that leverage the Sentient networks capabilities.
                     </p>
                     <div className="flex flex-wrap gap-2 text-xs">
                     <span className="rounded-full bg-amber-100 px-3 py-1 font-medium text-amber-800 dark:bg-amber-900/40 dark:text-amber-200">dApps</span>

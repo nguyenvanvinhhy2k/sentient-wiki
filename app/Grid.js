@@ -6,7 +6,7 @@ export default function Grid() {
                 <div className="p-6">
                   <h1 className="mb-2 text-2xl font-bold">The Grid</h1>
                   <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-                  The Grid is Sentient's decentralized compute network that powers the distributed intelligence ecosystem.
+                  The Grid is Sentients decentralized compute network that powers the distributed intelligence ecosystem.
                   </p>
                 </div>
               </div>
@@ -17,7 +17,7 @@ export default function Grid() {
                 <div className="p-6">
                   <h1 className="mb-2 text-2xl font-bold">What is The Grid?</h1>
                   <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-                  The Grid represents the computational backbone of the Sentient ecosystem. It's a decentralized network of compute nodes that collectively provide the processing power needed for AI model training, inference, and other computational tasks.
+                  The Grid represents the computational backbone of the Sentient ecosystem. Its a decentralized network of compute nodes that collectively provide the processing power needed for AI model training, inference, and other computational tasks.
                   </p>
                   <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
                   Unlike traditional cloud computing services that rely on centralized data centers, The Grid distributes computational workloads across a network of individual contributors, creating a more resilient and democratized computing infrastructure.

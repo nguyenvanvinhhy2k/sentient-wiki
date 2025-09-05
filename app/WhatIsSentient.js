@@ -35,10 +35,10 @@ export default function WhatIsSentient() {
                 <div className="p-6">
                   <h1 className="mb-2 text-2xl font-bold">Overview</h1>
                   <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-                  Sentient is building the world's first Loyal AI - artificial intelligence that serves humanity rather than corporations. As a non-profit foundation committed to advancing open-source AI technologies, Sentient champions a decentralized, transparent ecosystem where AI builders are key stakeholders.
+                  Sentient is building the worlds first Loyal AI - artificial intelligence that serves humanity rather than corporations. As a non-profit foundation committed to advancing open-source AI technologies, Sentient champions a decentralized, transparent ecosystem where AI builders are key stakeholders.
                   </p>
                   <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-                  With AGI on the horizon, Sentient's mission is to ensure it serves humanity by creating community-built, community-aligned, and community-owned AI systems. The foundation believes the power of AI belongs to everyone, not just large corporations.
+                  With AGI on the horizon, Sentients mission is to ensure it serves humanity by creating community-built, community-aligned, and community-owned AI systems. The foundation believes the power of AI belongs to everyone, not just large corporations.
                     </p>
                   {/* <div className="flex flex-wrap gap-2 text-xs">
                     <span className="rounded-full bg-amber-100 px-3 py-1 font-medium text-amber-800 dark:bg-amber-900/40 dark:text-amber-200">FPS</span>
@@ -82,7 +82,7 @@ To create Open AGI that is aligned to humanity, empowering communities worldwide
                   <h1 className="mb-2 text-2xl font-bold">Key Products & Technologies</h1>
                   <h3> The Dobby Family</h3>
                   <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-                  World's first Loyal and Most Free LLMs - AI models designed to be aligned with human values and community interests rather than corporate objectives.
+                  Worlds first Loyal and Most Free LLMs - AI models designed to be aligned with human values and community interests rather than corporate objectives.
                   </p>
                   <h3> OpenDeepSearch</h3>
                   <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">

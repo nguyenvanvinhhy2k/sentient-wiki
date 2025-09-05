@@ -20,7 +20,7 @@ export default function Community() {
             The Sentient community is a diverse ecosystem of developers, researchers, artists, and AI enthusiasts who share a common vision of democratizing artificial intelligence. Our community operates on principles of openness, collaboration, and shared ownership of the future of AI.
             </p>
             <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-            Whether you're a seasoned AI researcher, a curious developer, or someone passionate about the future of technology, there's a place for you in the Sentient community.
+            Whether you a seasoned AI researcher, a curious developer, or someone passionate about the future of technology, there a place for you in the Sentient community.
               </p>
           </div>
         </div>
@@ -52,7 +52,7 @@ export default function Community() {
                   <h3> Researchers</h3>
                   <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
                   
-                  AI researchers and academics contributing to Sentient's scientific advancement.
+                  AI researchers and academics contributing to Sentient scientific advancement.
                     </p>
 
                     <h3> Grid Operators</h3>
@@ -64,7 +64,7 @@ export default function Community() {
                     <h3> Community Members</h3>
                   <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
                   
-                  General community members interested in Sentient's mission and development.
+                  General community members interested in Sentient mission and development.
                     </p>
 
                     <div className="flex flex-wrap gap-2 text-xs">
@@ -137,7 +137,7 @@ export default function Community() {
           <div className="p-6">
             <h1 className="mb-2 text-2xl font-bold">Community Governance</h1>
             <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-            Sentient operates on principles of decentralized governance, where community members have a voice in important decisions affecting the ecosystem's development and direction.
+            Sentient operates on principles of decentralized governance, where community members have a voice in important decisions affecting the ecosystem development and direction.
             </p>
 
             <h3>Proposal System</h3>

@@ -282,7 +282,7 @@ export default function Airdrop() {
             <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4">
                 <h3 className="mb-4">Wallet Connection</h3>
                 <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-                Connect your wallet to the Sentient platform to receive airdrop tokens. Ensure you're using a compatible wallet and have the correct network configured.
+                Connect your wallet to the Sentient platform to receive airdrop tokens. Ensure you using a compatible wallet and have the correct network configured.
                     </p>
 
                     <div className="flex flex-wrap gap-2 text-xs">

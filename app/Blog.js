@@ -147,7 +147,7 @@ export default function Blog() {
           <div className="p-6">
             <h1 className="mb-2 text-2xl font-bold">Academic Publications</h1>
             <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4">
-                    <h3>"Towards Decentralized Artificial General Intelligence: Architecture and Challenges"</h3>
+                    <h3>Towards Decentralized Artificial General Intelligence: Architecture and Challenges</h3>
                      <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
                      Proceedings of the International Conference on Distributed AI Systems, 2024
                     </p>
@@ -159,7 +159,7 @@ export default function Blog() {
                   </section>
 
                   <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4">
-                    <h3>"Economic Incentives in Distributed AI Networks: A Game-Theoretic Analysis"</h3>
+                    <h3>Economic Incentives in Distributed AI Networks: A Game-Theoretic Analysis</h3>
                      <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
                      Journal of Decentralized Systems and Economics, Vol. 12, 2024
                     </p>

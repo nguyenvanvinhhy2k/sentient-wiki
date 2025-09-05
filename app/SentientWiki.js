@@ -113,17 +113,17 @@ export default function SentientWiki() {
     },
   ];
 
-  const trending = new Array(6).fill(0).map((_, i) => ({
-    id: `trend-${i + 1}`,
-    title: `Bài nổi bật #${i + 1}`,
-    img: `https://picsum.photos/seed/ow-${i}/480/270`,
-  }));
+  // const trending = new Array(6).fill(0).map((_, i) => ({
+  //   id: `trend-${i + 1}`,
+  //   title: `Bài nổi bật #${i + 1}`,
+  //   img: `https://picsum.photos/seed/ow-${i}/480/270`,
+  // }));
 
-  const latest = new Array(8).fill(0).map((_, i) => ({
-    id: `latest-${i + 1}`,
-    title: `Cập nhật gần đây #${i + 1}`,
-    date: `2025-0${(i % 9) + 1}-0${(i % 9) + 1}`,
-  }));
+  // const latest = new Array(8).fill(0).map((_, i) => ({
+  //   id: `latest-${i + 1}`,
+  //   title: `Cập nhật gần đây #${i + 1}`,
+  //   date: `2025-0${(i % 9) + 1}-0${(i % 9) + 1}`,
+  // }));
 
   // Filtered nav search
   const filteredNav = useMemo(() => {
