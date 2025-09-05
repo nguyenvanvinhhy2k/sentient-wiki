@@ -1,35 +1,114 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { X, Send } from "lucide-react";
+import WhatIsSentient from "./WhatIsSentient"
+import Grids from "./Grid"
 import logo from "./images/sentient-logo.jpg"
+import sentientMess from "./images/sentient-mess.png"
+import Community from "./Community"
+import Github from "./Github"
+import Partners from "./Partners"
+import Contribute from "./Contribute"
+import Airdrop from "./Airdrop"
+import Blog from "./Blog"
 
 export default function SentientWiki() {
   const [dark, setDark] = useState(true);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [query, setQuery] = useState("");
-  const [activeHeading, setActiveHeading] = useState("intro");
+  const [activeHeading, setActiveHeading] = useState("home");
+  const [open, setOpen] = useState(false);
+  const [input, setInput] = useState("");
+  const [isSending, setIsSending] = useState(false);
+  const [selectedId, setSelectedId] = useState("home");
+  const [messages, setMessages] = useState(() => {
 
-  // Fake data (replace with real content or CMS)
+    if (typeof window !== "undefined") {
+      const cached = window.localStorage.getItem("chat_widget_msgs_v1");
+      if (cached) return JSON.parse(cached);
+    }
+    return [
+      {
+        id: crypto.randomUUID(),
+        role: "bot",
+        text: "Xin chào 👋 Mình là trợ lý ảo. Mình có thể giúp gì cho bạn?",
+      },
+    ];
+  });
+  const scrollRef = useRef(null);
+  const textareaRef = useRef(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("chat_widget_msgs_v1", JSON.stringify(messages));
+    }
+  }, [messages]);
+
+  useEffect(() => {
+    if (open && scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  }, [open, messages]);
+
+  useEffect(() => {
+    const el = textareaRef.current;
+    if (!el) return;
+    el.style.height = "0px";
+    const next = Math.min(144, el.scrollHeight);
+    el.style.height = next + "px";
+  }, [input, open]);
+
+  function handleSend() {
+    const trimmed = input.trim();
+    if (!trimmed || isSending) return;
+
+    const userMsg = { id: crypto.randomUUID(), role: "user", text: trimmed };
+    setMessages((m) => [...m, userMsg]);
+    setInput("");
+    setIsSending(true);
+
+    const replyText = generateBotReply(trimmed);
+    setTimeout(() => {
+      const botMsg = { id: crypto.randomUUID(), role: "bot", text: replyText };
+      setMessages((m) => [...m, botMsg]);
+      setIsSending(false);
+    }, 450);
+  }
+
+  function onKeyDown(e) {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleSend();
+    }
+  }
+
+  const brand = useMemo(
+    () => ({
+      ring: "focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500",
+      primary: "bg-indigo-600 hover:bg-indigo-700",
+      subtle: "text-neutral-500",
+      surface: "bg-white dark:bg-neutral-900",
+      border: "border border-neutral-200 dark:border-neutral-800",
+      text: "text-neutral-900 dark:text-neutral-100",
+      bubbleUser: "bg-indigo-600 text-white",
+      bubbleBot: "bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100",
+    }),
+    []
+  );
+
   const nav = [
     {
-      title: "Tổng quan",
+      title: "Overview",
       items: [
-        { id: "intro", label: "Giới thiệu" },
-        { id: "lore", label: "Cốt truyện" },
-        { id: "timeline", label: "Dòng thời gian" },
-      ],
-    },
-    {
-      title: "Nhân vật",
-      items: [
-        { id: "heroes", label: "Heroes" },
-        { id: "roles", label: "Vai trò" },
-        { id: "abilities", label: "Kỹ năng" },
-      ],
-    },
-    {
-      title: "Chế độ & Bản đồ",
-      items: [
-        { id: "modes", label: "Chế độ chơi" },
-        { id: "maps", label: "Bản đồ" },
+        { id: "intro", label: "Home", component: "home" },
+        { id: "timeline", label: "What is Sentient?", component: "whatis"  },
+        { id: "timeline", label: "GRID", component: "grid"  },
+        { id: "timeline", label: "Discord Community", component: "community"  },
+        { id: "timeline", label: "Github", component: "github"  },
+        { id: "timeline", label: "Partners", component: "partners"  },
+        { id: "timeline", label: "How to Contribute", component: "contribute"  },
+        { id: "timeline", label: "Airdrop & Token info", component: "airdrop"  },
+        { id: "timeline", label: "Blog/Research", component: "blog"  },
       ],
     },
   ];
@@ -45,23 +124,6 @@ export default function SentientWiki() {
     title: `Cập nhật gần đây #${i + 1}`,
     date: `2025-0${(i % 9) + 1}-0${(i % 9) + 1}`,
   }));
-
-  // Observe headings to highlight active section in TOC
-  const contentRef = useRef(null);
-  useEffect(() => {
-    const headings = contentRef.current?.querySelectorAll("section[id]") ?? [];
-    const io = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-        if (visible[0]) setActiveHeading(visible[0].target.id);
-      },
-      { rootMargin: "-64px 0px -60% 0px", threshold: [0.1, 0.25, 0.5, 0.75] }
-    );
-    headings.forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, []);
 
   // Filtered nav search
   const filteredNav = useMemo(() => {
@@ -91,7 +153,7 @@ export default function SentientWiki() {
 
             <a href="#" className="flex items-center gap-2">
               <img src={logo.src} className="h-12 w-12"/>
-              <span className="hidden text-lg font-bold sm:block">Sentient Wiki</span>
+              <span className=" text-lg font-bold ">Sentient Wiki</span>
             </a>
 
             <div className="mx-2 hidden flex-1 md:block">
@@ -129,19 +191,16 @@ export default function SentientWiki() {
         {/* Layout */}
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 py-6 md:grid-cols-[260px_1fr] lg:grid-cols-[260px_1fr_320px]">
           {/* Sidebar */}
-          <aside
-            className={
-              "fixed inset-y-0 left-0 z-30 w-72 -translate-x-full overflow-y-auto border-r border-zinc-200 bg-white p-4 transition-transform dark:border-zinc-800 dark:bg-zinc-900 md:static md:translate-x-0 md:w-auto md:border-0 md:bg-transparent md:p-0 md:dark:bg-transparent" +
-              (mobileNavOpen ? " translate-x-0" : "")
+          <aside className={" inset-y-0 left-0 z-30 w-72 -translate-x-full overflow-y-auto border-r border-zinc-200 bg-white p-4 transition-transform dark:border-zinc-800 dark:bg-zinc-900 md:static md:translate-x-0 md:w-auto md:border-0 md:bg-transparent md:p-0 md:dark:bg-transparent" + (mobileNavOpen ? " translate-x-0" : "")
             }
             aria-label="Điều hướng"
           >
-            <div className="md:hidden mb-4 flex items-center justify-between sticky top-20 space-y-6 ">
-              <span className="text-sm font-semibold opacity-70">Danh mục</span>
+            <div className="md:hidden mb-4 flex items-center justify-between sticky sm:top-20 sm:space-y-6 ">
+              <span className="text-sm font-semibold opacity-70">Category</span>
               <button
                 className="rounded-xl border border-zinc-200 px-3 py-1 text-sm hover:bg-zinc-50 dark:border-zinc-800 dark:hover:bg-zinc-800"
                 onClick={() => setMobileNavOpen(false)}
-              >Đóng</button>
+              >Close</button>
             </div>
 
             <div className="mb-3 md:hidden">
@@ -159,27 +218,30 @@ export default function SentientWiki() {
               </label>
             </div>
 
-            <nav className="space-y-5 pr-2 text-sm ">
+            <nav className="space-b-5 pr-2 text-sm ">
               {filteredNav.map((section) => (
                 <div key={section.title}>
-                  <div className="mb-2 px-2 text-xs font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
+                  <div className="mb-4 px-2 text-[24px] font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
                     {section.title}
                   </div>
                   <ul className="space-y-1">
                     {section.items.map((it) => (
                       <li key={it.id}>
-                        <a
-                          href={`#${it.id}`}
-                          onClick={() => setMobileNavOpen(false)}
+                        <botton
+
+                          onClick={() => { setMobileNavOpen(false)
+                            setSelectedId(it.component)
+                            setActiveHeading(it.component)}
+                          }
                           className={
-                            "block rounded-xl px-3 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 " +
-                            (activeHeading === it.id
+                            "block rounded-xl px-3 py-2 cursor-pointer hover:bg-zinc-100 dark:hover:bg-zinc-800 " +
+                            (activeHeading === it.component
                               ? "bg-zinc-100 font-semibold dark:bg-zinc-800"
                               : "")
                           }
                         >
                           {it.label}
-                        </a>
+                        </botton>
                       </li>
                     ))}
                   </ul>
@@ -189,26 +251,24 @@ export default function SentientWiki() {
           </aside>
 
           {/* Main Content */}
-          <main ref={contentRef} className="space-y-6">
+          <div>
+          {selectedId === 'home' &&  
+          <main className="space-y-6">
             {/* Breadcrumbs */}
-            <div className="text-xs text-zinc-500 dark:text-zinc-400">
-              <a href="#" className="hover:underline">Trang chủ</a> / <a href="#" className="hover:underline">Bách khoa</a> / Overwatch
-            </div>
-
+  
             {/* Featured */}
             <section id="intro" className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
               <div className="grid grid-cols-1 md:grid-cols-2">
                 <div className="p-6">
-                  <h1 className="mb-2 text-2xl font-bold">Sentient – Tổng quan</h1>
+                  <h1 className="mb-2 text-2xl font-bold">Sentient – Overview</h1>
                   <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-                    Overwatch là trò chơi bắn súng nhóm 6v6/5v5 với hệ thống hero đa dạng, mỗi hero có bộ kỹ năng riêng. Bài viết này tóm tắt
-                    cốt truyện, chế độ chơi và các bản cập nhật quan trọng theo phong cách wiki.
+                  A comprehensive knowledge base for everything related to the Sentient ecosystem - the decentralized intelligence network building the future of AI.
                   </p>
-                  <div className="flex flex-wrap gap-2 text-xs">
+                  {/* <div className="flex flex-wrap gap-2 text-xs">
                     <span className="rounded-full bg-amber-100 px-3 py-1 font-medium text-amber-800 dark:bg-amber-900/40 dark:text-amber-200">FPS</span>
                     <span className="rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">PvP</span>
                     <span className="rounded-full bg-emerald-100 px-3 py-1 font-medium text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-200">eSports</span>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="relative min-h-60">
                   <img
@@ -221,136 +281,22 @@ export default function SentientWiki() {
                 </div>
               </div>
             </section>
+          </main>}
 
-            {/* Lore */}
-            <section id="lore" className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-              <h2 className="mb-3 text-xl font-bold">Cốt truyện</h2>
-              <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
-                Tổ chức Overwatch được thành lập để đối phó khủng hoảng Omnic, quy tụ những anh hùng từ khắp nơi trên thế giới.
-                Sau giai đoạn hoàng kim, nội bộ rạn nứt và tổ chức bị giải thể, nhưng các mối đe doạ mới buộc các anh hùng phải tái hợp.
-              </p>
-            </section>
-
-            {/* Timeline */}
-            <section id="timeline" className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-              <h2 className="mb-4 text-xl font-bold">Dòng thời gian</h2>
-              <ul className="space-y-3 text-sm">
-                {[
-                  { year: 2016, text: "Overwatch phát hành lần đầu" },
-                  { year: 2022, text: "Công bố Overwatch 2" },
-                  { year: 2023, text: "OW2 phát hành, chuyển sang 5v5" },
-                  { year: 2025, text: "Nhiều mùa giải & sự kiện" },
-                ].map((t) => (
-                  <li key={t.year} className="flex items-start gap-3">
-                    <span className="mt-0.5 h-2 w-2 rounded-full bg-amber-500" />
-                    <div>
-                      <div className="font-medium">{t.year}</div>
-                      <div className="text-zinc-600 dark:text-zinc-300">{t.text}</div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            {/* Heroes */}
-            <section id="heroes" className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-              <div className="mb-4 flex items-center justify-between">
-                <h2 className="text-xl font-bold">Heroes</h2>
-                <a href="#" className="text-sm font-medium text-amber-600 hover:underline dark:text-amber-400">Xem tất cả</a>
-              </div>
-              <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-                {["Tank", "Damage", "Support", "Special"].map((role, i) => (
-                  <article key={role} className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:shadow-md dark:border-zinc-800 dark:bg-zinc-950">
-                    <div className="aspect-video">
-                      <img
-                        src={`https://picsum.photos/seed/hero-${i}/600/400`}
-                        alt={`${role} hero`}
-                        className="h-full w-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div className="p-4">
-                      <h3 className="font-semibold">{role}</h3>
-                      <p className="mt-1 text-xs text-zinc-600 dark:text-zinc-400">
-                        Danh sách hero theo vai trò, chỉ số và kỹ năng nổi bật.
-                      </p>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </section>
-
-            {/* Modes & Maps */}
-            <section id="modes" className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-              <h2 className="mb-3 text-xl font-bold">Chế độ chơi</h2>
-              <p className="text-sm text-zinc-700 dark:text-zinc-300">
-                Push, Control, Hybrid, Escort… mỗi chế độ có mục tiêu riêng và yêu cầu phối hợp khác nhau.
-              </p>
-            </section>
-
-            <section id="maps" className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-              <h2 className="mb-3 text-xl font-bold">Bản đồ</h2>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {["Shambali", "Circuit Royal", "New Junk City", "Ilios"].map((m, i) => (
-                  <div key={m} className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-950">
-                    <img
-                      src={`https://picsum.photos/seed/map-${i}/800/450`}
-                      alt={`Map ${m}`}
-                      className="h-40 w-full object-cover"
-                      loading="lazy"
-                    />
-                    <div className="p-4">
-                      <div className="font-semibold">{m}</div>
-                      <p className="mt-1 text-xs text-zinc-600 dark:text-zinc-400">
-                        Mô tả ngắn gọn về bản đồ và mẹo thi đấu.
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* Trending */}
-            <section className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-              <div className="mb-4 flex items-center justify-between">
-                <h2 className="text-xl font-bold">Đang thịnh hành</h2>
-                <a href="#" className="text-sm font-medium text-amber-600 hover:underline dark:text-amber-400">Khám phá</a>
-              </div>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {trending.map((t) => (
-                  <a key={t.id} href="#" className="group overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:shadow-md dark:border-zinc-800 dark:bg-zinc-950">
-                    <div className="aspect-video overflow-hidden">
-                      <img src={t.img} alt="Trending" className="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy"/>
-                    </div>
-                    <div className="p-4">
-                      <div className="font-semibold group-hover:underline">{t.title}</div>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </section>
-
-            {/* Latest */}
-            <section className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-              <div className="mb-4 flex items-center justify-between">
-                <h2 className="text-xl font-bold">Mới cập nhật</h2>
-                <button className="rounded-xl border border-zinc-200 px-3 py-1 text-sm hover:bg-zinc-50 dark:border-zinc-800 dark:hover:bg-zinc-800">Theo dõi</button>
-              </div>
-              <ul className="divide-y divide-zinc-200 dark:divide-zinc-800">
-                {latest.map((it) => (
-                  <li key={it.id} className="flex items-center justify-between gap-4 py-3">
-                    <a href="#" className="font-medium hover:underline">{it.title}</a>
-                    <span className="text-xs text-zinc-500">{it.date}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          </main>
-
+          {selectedId === 'whatis' &&  <WhatIsSentient />}
+          {selectedId === 'grid' &&  <Grids />}
+          {selectedId === 'community' &&  <Community />}
+          {selectedId === 'github' &&  <Github />}
+          {selectedId === 'partners' &&  <Partners />}
+          {selectedId === 'contribute' &&  <Contribute />}
+          {selectedId === 'airdrop' &&  <Airdrop />}
+          {selectedId === 'blog' &&  <Blog />}
+         
+          </div>
           {/* Right Column: Infobox */}
           <aside className="hidden lg:block">
             <div className="sticky top-20 space-y-6">
-              <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+              {/* <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
                 <div className="border-b border-zinc-200 p-4 text-sm font-semibold dark:border-zinc-800">Infobox</div>
                 <div className="p-4 text-sm">
                   <dl className="space-y-2">
@@ -372,18 +318,17 @@ export default function SentientWiki() {
                     </div>
                   </dl>
                 </div>
-              </div>
+              </div> */}
 
               <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-                <div className="border-b border-zinc-200 p-4 text-sm font-semibold dark:border-zinc-800">Sự kiện</div>
+                <div className="border-b border-zinc-200 p-4 text-sm font-semibold dark:border-zinc-800">Event</div>
                 <ul className="p-2">
                   {[
-                    "Halloween Terror",
-                    "Winter Wonderland",
-                    "Summer Games",
-                    "Anniversary",
+                    "Decentralized Consensus",
+                    "The Grid",
+                    "Building the Future",
                   ].map((e) => (
-                    <li key={e} className="flex items-center gap-2 rounded-xl p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                    <li key={e} className="flex items-center gap-2 rounded-xl p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 cursor-pointer">
                       <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
                       <span className="text-sm">{e}</span>
                     </li>
@@ -401,33 +346,117 @@ export default function SentientWiki() {
               <div>
                 <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">Sentient Wiki</div>
                 <ul className="space-y-1">
-                  <li><a href="#" className="hover:underline">Giới thiệu</a></li>
-                  <li><a href="#" className="hover:underline">Quy tắc</a></li>
-                  <li><a href="#" className="hover:underline">Liên hệ</a></li>
+                  <li><a href="#" className="hover:underline">Introduce</a></li>
+                  <li><a href="#" className="hover:underline">Rules</a></li>
+                  <li><a href="#" className="hover:underline">Contact</a></li>
                 </ul>
               </div>
               <div>
-                <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">Cộng đồng</div>
+                <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">Community</div>
                 <ul className="space-y-1">
-                  <li><a href="#" className="hover:underline">Thảo luận</a></li>
-                  <li><a href="#" className="hover:underline">Đóng góp</a></li>
+                  <li><a href="#" className="hover:underline">Discuss</a></li>
+                  <li><a href="#" className="hover:underline">Contribute</a></li>
                 </ul>
               </div>
               <div>
-                <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">Tài liệu</div>
+                <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">Document</div>
                 <ul className="space-y-1">
                   <li><a href="#" className="hover:underline">API</a></li>
-                  <li><a href="#" className="hover:underline">Hướng dẫn biên tập</a></li>
+                  <li><a href="#" className="hover:underline">Editorial Guide</a></li>
                 </ul>
               </div>
               <div>
-                <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">Bản quyền</div>
-                <p className="text-zinc-600 dark:text-zinc-400">Nội dung demo cho mục đích học tập. Thương hiệu thuộc về chủ sở hữu tương ứng.</p>
+                <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">Copyright</div>
+                <p className="text-zinc-600 dark:text-zinc-400">Demo content for learning purposes. Trademarks belong to their respective owners.</p>
               </div>
             </div>
           </div>
         </footer>
       </div>
+
+
+      <button
+        type="button"
+        aria-label="Mở trò chuyện"
+        onClick={() => setOpen((v) => !v)}
+        className={`fixed bottom-10 right-10 z-40 inline-flex items-center justify-center h-16 w-16 rounded-full shadow-xl ${brand.primary} ${brand.ring}`}
+      >
+        {open ? <X className="h-6 w-6 text-white" /> : <img src={sentientMess.src} className="h-full w-full rounded-full hover:scale-105 duration-300"/> }
+      </button>
+
+      {/* Popup */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: 16, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 16, scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 240, damping: 24 }}
+            className={`fixed bottom-24 right-6 z-40 w-[92vw] max-w-md rounded-2xl shadow-2xl ${brand.surface} ${brand.border}`}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Hộp thoại trò chuyện"
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-200 dark:border-neutral-800">
+              <div className="flex items-center gap-2">
+              <img src={logo.src} className="h-9 w-9"/>
+                <div className="leading-tight">
+                  <p className={`text-sm font-semibold ${brand.text}`}>Virtual Assistant</p>
+                  <p className="text-xs text-neutral-500">Online</p>
+                </div>
+              </div>
+              <button
+                aria-label="Đóng"
+                onClick={() => setOpen(false)}
+                className={`p-2 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 ${brand.ring}`}
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            {/* Messages */}
+            <div ref={scrollRef} className="px-3 sm:px-4 py-3 h-[50vh] overflow-y-auto space-y-3">
+              {messages.map((m) => (
+                <div key={m.id} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
+                  <div
+                    className={`max-w-[80%] rounded-2xl px-3.5 py-2.5 text-sm shadow-sm ${
+                      m.role === "user" ? brand.bubbleUser : brand.bubbleBot
+                    }`}
+                  >
+                    {m.text}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Input */}
+            <div className="p-3 sm:p-4 border-t border-neutral-200 dark:border-neutral-800">
+              <div className="flex items-end gap-2">
+                <textarea
+                  ref={textareaRef}
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={onKeyDown}
+                  placeholder="Enter message..."
+                  className={`flex-1 resize-none rounded-xl px-3 py-2 overflow-hidden text-sm ${brand.surface} ${brand.text} ${brand.border} ${brand.ring}`}
+                  rows={1}
+                />
+                <button
+                  type="button"
+                  onClick={handleSend}
+                  disabled={!input.trim() || isSending}
+                  className={`inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-sm font-medium ${brand.primary} text-white disabled:opacity-50 ${brand.ring}`}
+                >
+                  <Send className="h-4 w-4" />
+                  Send
+                </button>
+              </div>
+              <p className="mt-2 text-[11px] text-neutral-500">Press Enter to send • Shift+Enter to go to new line</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
@@ -465,3 +494,19 @@ function MoonIcon() {
     </svg>
   );
 }
+
+function generateBotReply(userText) {
+  // Simple demo logic: you can replace this with your backend call
+  const lowered = userText.toLowerCase();
+  if (/(xin chào|chao|hello|hi)/.test(lowered)) {
+    return "Chào bạn! Bạn đang cần tư vấn về vấn đề gì?";
+  }
+  if (/giờ|mấy giờ|time|date/.test(lowered)) {
+    return `Bây giờ là ${new Date().toLocaleString()}.`;
+  }
+  if (/help|trợ giúp|hướng dẫn/.test(lowered)) {
+    return "Bạn có thể hỏi về sản phẩm, giá, hoặc tình trạng đơn hàng. Mình sẽ trả lời ngay!";
+  }
+  return `Mình đã nhận: “${userText}”. Hiện tại đây là bản demo — bạn có thể nối API thật để trả lời thông minh hơn.`;
+}
+
