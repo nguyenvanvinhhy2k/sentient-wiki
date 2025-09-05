@@ -1,0 +1,5 @@
+flask
+flask-cors
+python-dotenv
+fireworks-ai
+gunicorn
