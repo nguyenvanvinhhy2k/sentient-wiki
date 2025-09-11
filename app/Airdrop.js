@@ -48,35 +48,35 @@ export default function Airdrop() {
                     <span className="rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">Product Test</span>
                     <span className="rounded-full bg-emerald-100 px-3 py-1 font-medium text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-200">Limited Time</span>
                   </div>
-                  <button className="bg-slate-600 p-[6px] rounded-[8px] mt-[20px] flex justify-center w-full hover:scale-[1.01] duration-300 text-[#fff]">Join Waitlist</button>
+                  <a href="https://chat.sentient.xyz/" target="_blank" className="bg-slate-600 p-[6px] rounded-[8px] mt-[20px] flex justify-center w-full hover:scale-[1.01] duration-300 text-[#fff]">Join Chat</a>
                   </section>
 
                   <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4">
-                    <h3>Sentient Chat Waitlist</h3>
+                    <h3>Discord Community Roles</h3>
                     
                      <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-                     Register for the new Sentient Chat product test. Form closes soon - fill it out as quickly as possible for early access.
+                     Earn exclusive roles in Discord by being an active community member. Create content about Sentient, translate articles, and participate in discussions.
                     </p>
                     <div className="flex flex-wrap gap-2 text-xs">
                     <span className="rounded-full bg-amber-100 px-3 py-1 font-medium text-amber-800 dark:bg-amber-900/40 dark:text-amber-200">Community</span>
                     <span className="rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">Content Creation</span>
                     <span className="rounded-full bg-emerald-100 px-3 py-1 font-medium text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-200">Translation</span>
                   </div>
-                  <button className="bg-slate-600 p-[6px] rounded-[8px] mt-[20px] flex justify-center w-full hover:scale-[1.01] duration-300 text-[#fff]">Join Discord</button>
+                  <a href="https://discord.gg/sentientfoundation" target="_blank" className="bg-slate-600 p-[6px] rounded-[8px] mt-[20px] flex justify-center w-full hover:scale-[1.01] duration-300 text-[#fff]">Join Discord</a>
                   </section>
 
                   <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4">
-                    <h3>Sentient Chat Waitlist</h3>
+                    <h3>Dobby Arena Interaction</h3>
                     
                      <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-                     Register for the new Sentient Chat product test. Form closes soon - fill it out as quickly as possible for early access.
+                     Interact with Dobby AI (V2) and vote for the best answers. Available for NFT holders - one of the first activities to test Sentient products.
                     </p>
                     <div className="flex flex-wrap gap-2 text-xs">
                     <span className="rounded-full bg-amber-100 px-3 py-1 font-medium text-amber-800 dark:bg-amber-900/40 dark:text-amber-200">AI Interaction</span>
                     <span className="rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">Voting</span>
                     <span className="rounded-full bg-emerald-100 px-3 py-1 font-medium text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-200">Product Testing</span>
                   </div>
-                  <button className="bg-slate-600 p-[6px] rounded-[8px] mt-[20px] flex justify-center w-full hover:scale-[1.01] duration-300 text-[#fff]">Access Dobby Arena</button>
+                  <a href="https://dobby-arena.sentient.xyz/" target="_blank" className="bg-slate-600 p-[6px] rounded-[8px] mt-[20px] flex justify-center w-full hover:scale-[1.01] duration-300 text-[#fff]">Access Dobby Arena</a>
                   </section>
           </div>
         </div>
@@ -102,7 +102,7 @@ export default function Airdrop() {
                     Network: Polygon
                     </p>
 
-                  <button className="bg-slate-600 p-[6px] rounded-[8px] mt-[20px] flex justify-center w-full hover:scale-[1.01] duration-300 text-[#fff]">Export NFT</button>
+                  <a href="https://portal-fingerprint.sentient.xyz/" target="_blank" className="bg-slate-600 p-[6px] rounded-[8px] mt-[20px] flex justify-center w-full hover:scale-[1.01] duration-300 text-[#fff]">Export NFT</a>
                   </section>
 
                   <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4">
@@ -116,7 +116,7 @@ export default function Airdrop() {
                     <span className="rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">Pre-registration</span>
                     <span className="rounded-full bg-emerald-100 px-3 py-1 font-medium text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-200">Minting</span>
                   </div>
-                  <button className="bg-slate-600 p-[6px] rounded-[8px] mt-[20px] flex justify-center w-full hover:scale-[1.01] duration-300 text-[#fff]">Mint Dobby NFT</button>
+                  <a href="https://portal-fingerprint.sentient.xyz/" target="_blank" className="bg-slate-600 p-[6px] rounded-[8px] mt-[20px] flex justify-center w-full hover:scale-[1.01] duration-300 text-[#fff]">Mint Dobby NFT</a>
                   </section>
 
           </div>
@@ -229,7 +229,7 @@ export default function Airdrop() {
                     • Participate in network governance
                     </p>
 
-                  <button className="bg-slate-600 p-[6px] rounded-[8px] mt-[20px] flex justify-center w-full hover:scale-[1.01] duration-300 text-[#fff]">Setup Guide</button>
+                  <a href="https://grid.sentient.xyz/" target="_blank" className="bg-slate-600 p-[6px] rounded-[8px] mt-[20px] flex justify-center w-full hover:scale-[1.01] duration-300 text-[#fff]">Setup Guide</a>
                   </section>
 
                   <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4">
@@ -255,7 +255,7 @@ export default function Airdrop() {
                     • Participate in governance votes
                     </p>
 
-                  <button className="bg-slate-600 p-[6px] rounded-[8px] mt-[20px] flex justify-center w-full hover:scale-[1.01] duration-300 text-[#fff]">Join Community</button>
+                  <a href="https://discord.gg/sentientfoundation" target="_blank" className="bg-slate-600 p-[6px] rounded-[8px] mt-[20px] flex justify-center w-full hover:scale-[1.01] duration-300 text-[#fff]">Join Community</a>
                   </section>
           </div>
         </div>

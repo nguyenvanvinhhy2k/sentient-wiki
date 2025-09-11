@@ -12,6 +12,7 @@ import Contribute from "./Contribute"
 import Home from "./Home"
 import Airdrop from "./Airdrop"
 import Blog from "./Blog"
+import Github from "./Github";
 
 
 const componentsMap = {
@@ -20,6 +21,7 @@ const componentsMap = {
   grid: Grids,
   community: Community,
   builder: Builder,
+  github: Github,
   partners: Partners,
   contribute: Contribute,
   airdrop: Airdrop,
@@ -54,6 +56,7 @@ export default function SentientWiki() {
         { id: "grid", label: "GRID", component: "grid" },
         { id: "community", label: "Community", component: "community" },
         { id: "builder", label: "Builder", component: "builder" },
+        { id: "github", label: "Github", component: "github" },
         { id: "partners", label: "Partners", component: "partners" },
         { id: "contribute", label: "Contribute", component: "contribute" },
         { id: "airdrop", label: "Airdrop & Token info", component: "airdrop" },
@@ -198,7 +201,7 @@ export default function SentientWiki() {
 
             <div className="flex items-center gap-2">
               <img src={logo.src} className="h-11 w-11 rounded-full" />
-              <span className=" text-lg font-bold">Sentient Synthesis</span>
+              <span className=" text-lg font-bold">Sentient Synthetic</span>
             </div>
 
             <div className="mx-2 hidden flex-1 md:block">
@@ -364,14 +367,14 @@ export default function SentientWiki() {
                 <div className="border-b border-zinc-200 p-4 text-sm font-semibold dark:border-zinc-800">Featured News</div>
                 <ul className="p-2">
                   {[
-                    "ROMA: The Backbone for Open-Source Meta-Agents",
-                    "The Grid",
-                    "Building the Future",
-                  ].map((e) => (
-                    <li key={e} className="flex items-center gap-2 rounded-xl p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 cursor-pointer">
+                    {title:"ROMA: The Backbone for Open-Source Meta-Agents", link:"https://blog.sentient.xyz/posts/recursive-open-meta-agent"},
+                    {title:"How Does the GRID Orchestrate Intelligence?", link:"https://blog.sentient.xyz/posts/how-does-the-grid-orchestrate-intelligence"},
+                    {title:"Context Manipulation Attacks: Why Web Agents Need Secure Memory", link:"https://blog.sentient.xyz/posts/context-manipulation-attacks"},
+                  ].map((e, index) => (
+                    <a key={index} href={e.link} target="_blank" className="flex items-center gap-2 rounded-xl p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 cursor-pointer">
                       <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
-                      <span className="w-[90%] text-sm">{e}</span>
-                    </li>
+                      <span className="w-[90%] text-sm">{e.title}</span>
+                    </a>
                   ))}
                 </ul>
               </div>
@@ -381,33 +384,51 @@ export default function SentientWiki() {
 
         <footer className="border-t border-zinc-200 bg-white/60 py-8 text-sm dark:border-zinc-800 dark:bg-zinc-900/60">
           <div className="mx-auto max-w-[85rem] px-4">
-            <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+            <div className="grid grid-cols-2 gap-6  sm:grid-cols-4 md:grid-cols-4">
               <div>
-                <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">Sentient Wiki</div>
+                <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">Build</div>
                 <ul className="space-y-1">
-                  <li><a href="#" className="hover:underline">Introduce</a></li>
-                  <li><a href="#" className="hover:underline">Rules</a></li>
-                  <li><a href="#" className="hover:underline">Contact</a></li>
+                  <li><a href="https://www.sentient.xyz/builder-program" target="_blank" className="hover:underline">Builder Program</a></li>
+                  <li><a href="https://www.sentient.xyz/builder-suite" target="_blank" className="hover:underline">Builder Suite</a></li>
+                  <li><a href="https://huggingface.co/SentientAGI" target="_blank" className="hover:underline">Dobby LLMs</a></li>
                 </ul>
               </div>
               <div>
-                <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">Community</div>
+                <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">Company</div>
                 <ul className="space-y-1">
-                  <li><a href="#" className="hover:underline">Discuss</a></li>
-                  <li><a href="#" className="hover:underline">Contribute</a></li>
+                  <li><a href="https://www.sentient.xyz/partners" target="_blank" className="hover:underline">Partners</a></li>
+                  <li><a href="https://docs.sentient.xyz/" target="_blank" className="hover:underline">Protocol</a></li>
+                  <li><a href="https://jobs.ashbyhq.com/sentient" target="_blank" className="hover:underline">Careers</a></li>
+                  <li><a href="https://sentient.foundation/" target="_blank" className="hover:underline">Foundation</a></li>
                 </ul>
               </div>
               <div>
-                <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">Document</div>
+                <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">Papers</div>
                 <ul className="space-y-1">
-                  <li><a href="#" className="hover:underline">API</a></li>
-                  <li><a href="#" className="hover:underline">Editorial Guide</a></li>
+                  <li><a href="https://www.alphaxiv.org/abs/1701.03755" target="_blank" className="hover:underline">The Dobby Report</a></li>
+                  <li><a href="https://arxiv.org/abs/2503.20201" target="_blank" className="hover:underline">Open Deep Search</a></li>
+                  <li><a href="https://arxiv.org/abs/2503.16248" target="_blank" className="hover:underline">ElizsOS Agent Attacks</a></li>
+                  <li><a href="https://arxiv.org/abs/2502.15720" target="_blank" className="hover:underline">Training Loyal AI</a></li>
+                  <li><a href="https://arxiv.org/abs/2411.03887" target="_blank" className="hover:underline">OML Whitepaper</a></li>
+                  <li><a href="https://www.alphaxiv.org/abs/2502.07760" target="_blank" className="hover:underline">Fingerprinting</a></li>
                 </ul>
               </div>
               <div>
-                <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">Copyright</div>
-                <p className="text-zinc-600 dark:text-zinc-400">Demo content for learning purposes. Trademarks belong to their respective owners.</p>
+                <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">Terms and Policies</div>
+                <ul className="space-y-1">
+                  <li><a href="https://www.sentient.xyz/privacy-policy" target="_blank" className="hover:underline">Privacy Policy</a></li>
+                  <li><a href="https://www.sentient.xyz/terms-of-service" target="_blank" className="hover:underline">Terms of Service</a></li>
+                </ul>
               </div>
+
+              {/* <div>
+                <ul className="mb-2 text-xs font-semibold uppercase tracking-wide flex gap-2">
+                  <li><a href="https://www.sentient.xyz/privacy-policy" target="_blank" className="hover:underline">Privacy Policy</a></li>
+                  <li><a href="https://www.sentient.xyz/terms-of-service" target="_blank" className="hover:underline">Terms of Service</a></li>
+                  <li><a href="https://www.sentient.xyz/privacy-policy" target="_blank" className="hover:underline">Privacy Policy</a></li>
+                  <li><a href="https://www.sentient.xyz/terms-of-service" target="_blank" className="hover:underline">Terms of Service</a></li>
+                </ul>
+              </div> */}
             </div>
           </div>
         </footer>
