@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { X, Send } from "lucide-react";
 import WhatIsSentient from "./WhatIsSentient"
 import Grids from "./Grid"
-import logo from "./images/sentient-logo.jpg"
+import logo from "./images/sentient-new.jpg"
 import dobbyMess from "./images/dobby-mess.png"
 import Community from "./Community"
 import Builder from "./Builder"
@@ -198,7 +198,7 @@ export default function SentientWiki() {
 
             <div className="flex items-center gap-2">
               <img src={logo.src} className="h-11 w-11 rounded-full" />
-              <span className=" text-lg font-bold">Sentient Wiki</span>
+              <span className=" text-lg font-bold">Sentient Synthesis</span>
             </div>
 
             <div className="mx-2 hidden flex-1 md:block">

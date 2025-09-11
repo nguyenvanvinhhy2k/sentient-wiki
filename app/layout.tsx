@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sentient Wiki",
-  description: "Sentient Wiki 2025",
+  title: "Sentient Synthetic",
+  description: "Sentient Synthetic 2025",
 };
 
 export default function RootLayout({
