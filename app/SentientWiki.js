@@ -7,13 +7,15 @@ import logo from "./images/sentient-new.jpg"
 import dobbyMess from "./images/dobby-mess.png"
 import Community from "./Community"
 import Builder from "./Builder"
-import Partners from "./Partners"
 import Contribute from "./Contribute"
 import Home from "./Home"
 import Airdrop from "./Airdrop"
 import Blog from "./Blog"
 import Github from "./Github";
-
+import tw from "./images/tw.png"
+import dc from "./images/dc.png"
+import inn from "./images/in.png"
+import web from "./images/web.png"
 
 const componentsMap = {
   home: Home,
@@ -22,7 +24,6 @@ const componentsMap = {
   community: Community,
   builder: Builder,
   github: Github,
-  partners: Partners,
   contribute: Contribute,
   airdrop: Airdrop,
   blog: Blog,
@@ -57,7 +58,6 @@ export default function SentientWiki() {
         { id: "community", label: "Community", component: "community" },
         { id: "builder", label: "Builder", component: "builder" },
         { id: "github", label: "Github", component: "github" },
-        { id: "partners", label: "Partners", component: "partners" },
         { id: "contribute", label: "Contribute", component: "contribute" },
         { id: "airdrop", label: "Airdrop & Token info", component: "airdrop" },
         { id: "blog", label: "Blog/Research", component: "blog" },
@@ -384,7 +384,7 @@ export default function SentientWiki() {
 
         <footer className="border-t border-zinc-200 bg-white/60 py-8 text-sm dark:border-zinc-800 dark:bg-zinc-900/60">
           <div className="mx-auto max-w-[85rem] px-4">
-            <div className="grid grid-cols-2 gap-6  sm:grid-cols-4 md:grid-cols-4">
+            <div className="grid grid-cols-2 gap-6  sm:grid-cols-4 md:grid-cols-5">
               <div>
                 <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">Build</div>
                 <ul className="space-y-1">
@@ -421,14 +421,14 @@ export default function SentientWiki() {
                 </ul>
               </div>
 
-              {/* <div>
-                <ul className="mb-2 text-xs font-semibold uppercase tracking-wide flex gap-2">
-                  <li><a href="https://www.sentient.xyz/privacy-policy" target="_blank" className="hover:underline">Privacy Policy</a></li>
-                  <li><a href="https://www.sentient.xyz/terms-of-service" target="_blank" className="hover:underline">Terms of Service</a></li>
-                  <li><a href="https://www.sentient.xyz/privacy-policy" target="_blank" className="hover:underline">Privacy Policy</a></li>
-                  <li><a href="https://www.sentient.xyz/terms-of-service" target="_blank" className="hover:underline">Terms of Service</a></li>
+              <div>
+                <ul className="mb-2 text-xs font-semibold uppercase justify-center items-center tracking-wide flex 1">
+                  <li><a href="https://x.com/SentientAGI" target="_blank" className="hover:scale-[1.04]"><img src={tw.src} className="w-8 h-8 "/></a></li>
+                  <li><a href="https://discord.com/invite/sentientfoundation" target="_blank" className="hover:scale-[1.01]"><img src={dc.src} className="w-8 h-8"/></a></li>
+                  <li><a href="https://www.linkedin.com/company/sentientagi/" target="_blank" className="hover:scale-[1.01]"><img src={inn.src} className="w-6 h-6 mx-2"/></a></li>
+                  <li><a href="https://www.sentient.xyz/" target="_blank" className="hover:scale-[1.01]"><img src={web.src} className="w-6 h-6"/></a></li>
                 </ul>
-              </div> */}
+              </div>
             </div>
           </div>
         </footer>

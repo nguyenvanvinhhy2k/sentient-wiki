@@ -30,61 +30,135 @@ export default function Blog() {
         <div className="grid grid-cols-1 md:grid-cols-1">
           <div className="p-6">
             <h1 className="mb-2 text-2xl font-bold">Recent Blog Posts</h1>
-
-            <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4 cursor-pointer hover:scale-[1.01] duration-300">
-            <h3>Decentralized Consensus for AI Model Training: A New Paradigm</h3>
-            <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-            Exploring how distributed consensus mechanisms can enable collaborative AI model training while maintaining privacy and preventing adversarial attacks in decentralized networks.
-            </p>
-
+            <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] mt-4 border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4 cursor-pointer hover:scale-[1.01] duration-300">
+            <h1 className="text-[18px]">ROMA: The Backbone for Open-Source Meta-Agents</h1>
             <div className="flex justify-between items-center">
-
-            <div className="flex flex-wrap gap-2 text-xs">
-                    <span className="rounded-full bg-amber-100 px-3 py-1 font-medium text-amber-800 dark:bg-amber-900/40 dark:text-amber-200">Consensus</span>
-                    <span className="rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">Privacy </span>
-                    <span className="rounded-full bg-emerald-100 px-3 py-1 font-medium text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-200"> Distributed AI</span>
-                  </div>
-                  <a href="https://www.sentient.xyz/blog" target="_blank">
+            <p className="mb-2 mt-4 text-[13px] leading-relaxed text-zinc-600 dark:text-zinc-300">
+            Published on September 8, 2025
+            </p>
+                  <a href="https://blog.sentient.xyz/posts/recursive-open-meta-agent" target="_blank">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4 hover:scale-110 duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                   </a>
                   </div>
             </section>
 
             <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4 cursor-pointer hover:scale-[1.01] duration-300">
-            <h3>The Grid: Scaling Distributed Intelligence Through Economic Incentives</h3>
-            <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-            An in-depth analysis of how economic incentive structures can drive participation in distributed AI networks and ensure sustainable growth of computational resources.
-            </p>
-
+            <h1 className="text-[18px]">What is GIRD?</h1>
             <div className="flex justify-between items-center">
-
-            <div className="flex flex-wrap gap-2 text-xs">
-                    <span className="rounded-full bg-amber-100 px-3 py-1 font-medium text-amber-800 dark:bg-amber-900/40 dark:text-amber-200">Economics</span>
-                    <span className="rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">Incentives </span>
-                    <span className="rounded-full bg-emerald-100 px-3 py-1 font-medium text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-200">Scaling</span>
-                  </div>
-
-                  <a href="https://www.sentient.xyz/blog" target="_blank">
+            <p className="mb-2 mt-4 text-[13px] leading-relaxed text-zinc-600 dark:text-zinc-300">
+            Published on August 15, 2025
+            </p>
+                  <a href="https://blog.sentient.xyz/posts/what-is-grid" target="_blank">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4 hover:scale-110 duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                   </a>
                   </div>
             </section>
 
-            <section id="intro" className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4 cursor-pointer hover:scale-[1.01] duration-300">
-            <h3>Building the Future: Community-Driven AI Development</h3>
-            <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-            How open source principles and community governance are shaping the development of artificial general intelligence in the Sentient ecosystem.
-            </p>
-
+            <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4 cursor-pointer hover:scale-[1.01] duration-300">
+            <h1 className="text-[18px]">What is Sentient</h1>
             <div className="flex justify-between items-center">
-
-            <div className="flex flex-wrap gap-2 text-xs">
-                    <span className="rounded-full bg-amber-100 px-3 py-1 font-medium text-amber-800 dark:bg-amber-900/40 dark:text-amber-200">Community</span>
-                    <span className="rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">Open Source </span>
-                    <span className="rounded-full bg-emerald-100 px-3 py-1 font-medium text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-200"> Governance</span>
+            <p className="mb-2 mt-4 text-[13px] leading-relaxed text-zinc-600 dark:text-zinc-300">
+            Published on June 3, 2025
+            </p>
+                  <a href="https://blog.sentient.xyz/posts/what-is-sentient" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4 hover:scale-110 duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  </a>
                   </div>
+            </section>
 
-                  <a href="https://www.sentient.xyz/blog" target="_blank">
+            <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4 cursor-pointer hover:scale-[1.01] duration-300">
+            <h1 className="text-[18px]">How Does the GRID Orchestrate Intelligence?</h1>
+            <div className="flex justify-between items-center">
+            <p className="mb-2 mt-4 text-[13px] leading-relaxed text-zinc-600 dark:text-zinc-300">
+            Published on August 20, 2025
+            </p>
+                  <a href="https://blog.sentient.xyz/posts/how-does-the-grid-orchestrate-intelligence" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4 hover:scale-110 duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  </a>
+                  </div>
+            </section>
+
+            <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4 cursor-pointer hover:scale-[1.01] duration-300">
+            <h1 className="text-[18px]">Context Manipulation Attacks: Why Web Agents Need Secure Memory</h1>
+            <div className="flex justify-between items-center">
+            <p className="mb-2 mt-4 text-[13px] leading-relaxed text-zinc-600 dark:text-zinc-300">
+            
+             Published on August 4, 2025
+            </p>
+                  <a href="https://blog.sentient.xyz/posts/context-manipulation-attacks" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4 hover:scale-110 duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  </a>
+                  </div>
+            </section>
+
+            <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4 cursor-pointer hover:scale-[1.01] duration-300">
+            <h1 className="text-[18px]">Why AI Is a Coding Grandmaster Yet (And How We Cracking it Efficiently)</h1>
+            <div className="flex justify-between items-center">
+            <p className="mb-2 mt-4 text-[13px] leading-relaxed text-zinc-600 dark:text-zinc-300">
+             Published on August 4, 2025
+            </p>
+                  <a href="https://blog.sentient.xyz/posts/why-ai-isnt-a-coding-grandmaster-yet" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4 hover:scale-110 duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  </a>
+                  </div>
+            </section>
+
+            <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4 cursor-pointer hover:scale-[1.01] duration-300">
+            <h1 className="text-[18px]">Raising the Bar for Legal Reasoning</h1>
+            <div className="flex justify-between items-center">
+            <p className="mb-2 mt-4 text-[13px] leading-relaxed text-zinc-600 dark:text-zinc-300">
+            Published on June 20, 2025
+            </p>
+                  <a href="https://blog.sentient.xyz/posts/raising-the-bar-for-legal-reasoning" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4 hover:scale-110 duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  </a>
+                  </div>
+            </section>
+
+            <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4 cursor-pointer hover:scale-[1.01] duration-300">
+            <h1 className="text-[18px]">Finally: AI That Doesn’t Sound Like a Corporate Robot
+            </h1>
+            <div className="flex justify-between items-center">
+            <p className="mb-2 mt-4 text-[13px] leading-relaxed text-zinc-600 dark:text-zinc-300">
+            Published on May 28, 2025
+            </p>
+                  <a href="https://blog.sentient.xyz/posts/doesnt-sound-like-a-corporate-robot" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4 hover:scale-110 duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  </a>
+                  </div>
+            </section>
+
+            <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4 cursor-pointer hover:scale-[1.01] duration-300">
+            <h1 className="text-[18px]">Fingerprinting: Enabling Open-Source Monetization on the Model Layer</h1>
+            <div className="flex justify-between items-center">
+            <p className="mb-2 mt-4 text-[13px] leading-relaxed text-zinc-600 dark:text-zinc-300">            
+             Published on May 2, 2025
+            </p>
+                  <a href="https://blog.sentient.xyz/posts/fingerprinting-enabling-open-source-monetization-on-the-model-layer" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4 hover:scale-110 duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  </a>
+                  </div>
+            </section>
+
+            <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4 cursor-pointer hover:scale-[1.01] duration-300">
+            <h1 className="text-[18px]">Open Deep Search: Closing the gap between proprietary and open-source Search AI</h1>
+            <div className="flex justify-between items-center">
+            <p className="mb-2 mt-4 text-[13px] leading-relaxed text-zinc-600 dark:text-zinc-300">
+            Published on April 2, 2025
+            </p>
+                  <a href="https://blog.sentient.xyz/posts/open-deep-search-closing-the-gap-between-proprietary-and-open-source-search-ai" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4 hover:scale-110 duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  </a>
+                  </div>
+            </section>
+
+            <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4 cursor-pointer hover:scale-[1.01] duration-300">
+            <h1 className="text-[18px]">AI Agents in Cryptoland: Practical Attacks and No Silver Bullet</h1>
+            <div className="flex justify-between items-center">
+            <p className="mb-2 mt-4 text-[13px] leading-relaxed text-zinc-600 dark:text-zinc-300">
+             Published on March 25, 2025
+            </p>
+                  <a href="https://blog.sentient.xyz/posts/ai-agents-in-cryptoland" target="_blank">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4 hover:scale-110 duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                   </a>
                   </div>
@@ -93,59 +167,6 @@ export default function Blog() {
           </div>
         </div>
       </section>
-
-           <section id="intro" className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-              <div className="grid grid-cols-1 md:grid-cols-1">
-                <div className="p-6">
-                  <h1 className="mb-2 text-2xl font-bold">Research Areas</h1>
-                  <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4">
-            <h3>Distributed AI Systems</h3>
-            <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-            Research into architectures and algorithms that enable AI models to be trained and deployed across distributed networks while maintaining performance and security.
-            </p>
-            <div className="flex flex-wrap gap-2 text-xs">
-                    <span className="rounded-full bg-amber-100 px-3 py-1 font-medium text-amber-800 dark:bg-amber-900/40 dark:text-amber-200">Federated Learning</span>
-                    <span className="rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">Model Parallelism</span>
-                  </div>
-                  </section>
-
-                  <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4">
-                    <h3>Consensus Mechanisms</h3>
-                     <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-                     Development of novel consensus algorithms optimized for AI workloads, ensuring network security while enabling efficient distributed computation.
-                    </p>
-                    <div className="flex flex-wrap gap-2 text-xs">
-                    <span className="rounded-full bg-amber-100 px-3 py-1 font-medium text-amber-800 dark:bg-amber-900/40 dark:text-amber-200">Blockchain</span>
-                    <span className="rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">Proof of Intelligence</span>
-                  </div>
-                  </section>
-
-                  <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4">
-                    <h3>Privacy-Preserving AI</h3>
-                     <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-                     Techniques for training AI models on sensitive data while preserving privacy, including homomorphic encryption and secure multi-party computation.
-                    </p>
-                    <div className="flex flex-wrap gap-2 text-xs">
-                    <span className="rounded-full bg-amber-100 px-3 py-1 font-medium text-amber-800 dark:bg-amber-900/40 dark:text-amber-200">Privacy</span>
-                    <span className="rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">Cryptography</span>
-                  </div>
-                  </section>
-
-                  <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4">
-                    <h3>Economic Models</h3>
-                     <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-                     Analysis of tokenomics and incentive structures that drive sustainable participation in decentralized AI networks and ensure fair resource allocation.
-                    </p>
-                    <div className="flex flex-wrap gap-2 text-xs">
-                    <span className="rounded-full bg-amber-100 px-3 py-1 font-medium text-amber-800 dark:bg-amber-900/40 dark:text-amber-200">Tokenomics</span>
-                    <span className="rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">Game Theory</span>
-                  </div>
-                  </section>
-
-                </div>
-              </div>
-            </section>
-
 
             <section id="intro" className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
         <div className="grid grid-cols-1 md:grid-cols-1">

@@ -132,7 +132,7 @@ export default function Airdrop() {
                      <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
                      Sign in with Google account or wallet and complete simple tasks to enter the raffle.
                     </p>
-               <button className="rounded-[8px] text-[12px] hover:scale-[1.01] duration-300 bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">Join Waitlist</button>
+               <a href="https://chat.sentient.xyz/" target="_blank" className="rounded-[8px] text-[12px] hover:scale-[1.01] duration-300 bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">Join Waitlist</a>
                </section>
 
                <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4">
@@ -140,7 +140,7 @@ export default function Airdrop() {
                      <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
                      Join Discord, grab your first 3 roles, then access the evangelist channel to post content about Sentient.
                     </p>
-               <button className="rounded-[8px] text-[12px] hover:scale-[1.01] duration-300 bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">Join Discord</button>
+               <a href="https://discord.gg/sentientfoundation" target="_blank" className="rounded-[8px] text-[12px] hover:scale-[1.01] duration-300 bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">Join Discord</a>
                </section>
 
                <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4">
@@ -148,7 +148,7 @@ export default function Airdrop() {
                      <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
                      Complete the pre-registration campaign, mint your Dobby NFT, and export it to your wallet for full access.
                     </p>
-               <button className="rounded-[8px] text-[12px] hover:scale-[1.01] duration-300 bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">Mint NFT</button>
+               <a href="https://campaign.sentient.xyz/" target="_blank" className="rounded-[8px] text-[12px] hover:scale-[1.01] duration-300 bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">Mint NFT</a>
                </section>
 
                <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4">
@@ -156,7 +156,7 @@ export default function Airdrop() {
                      <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
                      Use your NFT to access Dobby Arena, interact with the AI, and vote for the best answers to increase airdrop chances.
                     </p>
-               <button className="rounded-[8px] text-[12px] hover:scale-[1.01] duration-300 bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">Access Dobby Arena</button>
+               <a href="https://dobby-arena.sentient.xyz/" target="_blank" className="rounded-[8px] text-[12px] hover:scale-[1.01] duration-300 bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">Access Dobby Arena</a>
                </section>
 
                <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4">
@@ -164,7 +164,7 @@ export default function Airdrop() {
                      <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
                      Fill out the early access form to get priority testing access to new Sentient applications.
                     </p>
-               <button className="rounded-[8px] text-[12px] hover:scale-[1.01] duration-300 bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">Fill Early Access Form</button>
+               <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhIHQhTodNGWE5peOjT9ot4jqgaqLJars1lc__FpnIpxhPBw/viewform" target="_blank" className="rounded-[8px] text-[12px] hover:scale-[1.01] duration-300 bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">Fill Early Access Form</a>
                </section>
           </div>
 
@@ -179,24 +179,19 @@ export default function Airdrop() {
             <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4">
                 <h3>Airdrop Tracking</h3>
                 <div className="flex justify-between gap-2 mt-2">
-               <button className="rounded-[8px] w-[48%] text-[12px] hover:scale-[1.01] duration-300 bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">→ CryptoRank Airdrop Guide</button>
-               <button className="rounded-[8px] w-[48%] text-[12px] hover:scale-[1.01] duration-300 bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">→ Funding & Tokenomics Info</button>
+               <a href="https://cryptorank.io/drophunting/sentient-activity278" target="_blank" className="rounded-[8px] w-[48%] text-[12px] hover:scale-[1.01] duration-300 bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">→ CryptoRank Airdrop Guide</a>
+               <a href="https://cryptorank.io/ico/sentient" target="_blank" className="rounded-[8px] w-[48%] text-[12px] hover:scale-[1.01] duration-300 bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">→ Funding & Tokenomics Info</a>
                </div>
             </section>
 
             <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4">
                 <h3>Official Platforms</h3>
                 <div className="flex justify-between gap-2 mt-2">
-               <button className="rounded-[8px] w-[48%] text-[12px] hover:scale-[1.01] duration-300 bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">→ CryptoRank Airdrop Guide</button>
-               <button className="rounded-[8px] w-[48%] text-[12px] hover:scale-[1.01] duration-300 bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">→ Funding & Tokenomics Info</button>
-               <button className="rounded-[8px] w-[48%] text-[12px] hover:scale-[1.01] duration-300 bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">→ Twitter/X Updates</button>
+               <a href="https://www.sentient.xyz/" target="_blank" className="rounded-[8px] w-[48%] text-[12px] hover:scale-[1.01] duration-300 bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">→ CryptoRank Airdrop Guide</a>
+               <a href="https://discord.gg/sentientfoundation" target="_blank" className="rounded-[8px] w-[48%] text-[12px] hover:scale-[1.01] duration-300 bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">→ Funding & Tokenomics Info</a>
+               <a href="https://x.com/SentientAGI" target="_blank" className="rounded-[8px] w-[48%] text-[12px] hover:scale-[1.01] duration-300 bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">→ Twitter/X Updates</a>
                </div>
             </section>
-
-
-          
-
-  
           </div>
 
         </div>
@@ -229,7 +224,7 @@ export default function Airdrop() {
                     • Participate in network governance
                     </p>
 
-                  <a href="https://grid.sentient.xyz/" target="_blank" className="bg-slate-600 p-[6px] rounded-[8px] mt-[20px] flex justify-center w-full hover:scale-[1.01] duration-300 text-[#fff]">Setup Guide</a>
+                  <a href="https://sentient-wiki.vercel.app/the-grid" target="_blank" className="bg-slate-600 p-[6px] rounded-[8px] mt-[20px] flex justify-center w-full hover:scale-[1.01] duration-300 text-[#fff]">Setup Guide</a>
                   </section>
 
                   <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4">

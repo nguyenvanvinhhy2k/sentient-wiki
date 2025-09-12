@@ -1,4 +1,9 @@
+import gird3 from "./images/gird3.png"
+import { useState } from "react";
+
 export default function WhatIsSentient() {
+  const [selectedImage, setSelectedImage] = useState(null);
+
     return (
 <main className="space-y-6">
             {/* Breadcrumbs */}
@@ -12,21 +17,14 @@ export default function WhatIsSentient() {
                   <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
                   Sentient Foundation is pioneering Open AGI - empowering 8 billion people to build aligned AI models that are community-aligned, community-owned, and community-controlled.
                   </p>
-                  {/* <div className="flex flex-wrap gap-2 text-xs">
-                    <span className="rounded-full bg-amber-100 px-3 py-1 font-medium text-amber-800 dark:bg-amber-900/40 dark:text-amber-200">FPS</span>
-                    <span className="rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">PvP</span>
-                    <span className="rounded-full bg-emerald-100 px-3 py-1 font-medium text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-200">eSports</span>
-                  </div> */}
+
+                  <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
+                  Sentient is building the world’s first open and community-built AGI—competing directly with the closed AGI systems developed by OpenAI, Anthropic, Google, and others.
+                  </p>
+                  
+                
                 </div>
-                {/* <div className="relative min-h-60">
-                  <img
-                    src="https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1400&auto=format&fit=crop"
-                    alt="Overwatch style banner"
-                    className="h-full w-full object-cover"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                </div> */}
+              
               </div>
             </section>
 
@@ -57,6 +55,21 @@ export default function WhatIsSentient() {
                 </div> */}
               </div>
             </section>
+
+            <section id="intro" className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+            <div className="grid grid-cols-1 md:grid-cols-1">
+                <div className="p-6">
+                  <h1 className="mb-2 text-2xl font-bold">How Does Sentient Compare to Other AI Companies</h1>
+                
+                  <p className="mb-4 mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
+                  To understand the space and Sentient’s potential, one must understand two dimensions of AI: openness and revenue potential/utility. Sentient is the only project that is open, community-owned, with high utility and revenue potential, maximizing these two dimensions and making it one of the biggest opportunities in AI. Bittensor is open and community-owned but low in utility and revenue. Perplexity, Anthropic, and OpenAI are closed, high-revenue/high-utility platforms. DeepSeek is open-source, but not community-owned or community-built.
+                  </p>
+                  <img src={gird3.src} className="rounded-md cursor-pointer" onClick={() => setSelectedImage(gird3.src) }/>
+              
+                </div>
+              </div>
+            </section>
+
 
             <section id="intro" className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
               <div className="grid grid-cols-1 md:grid-cols-1">
@@ -112,6 +125,29 @@ export default function WhatIsSentient() {
                 </div>
               </div>
             </section>
+
+            {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative">
+            <img
+              src={selectedImage}
+              alt="Preview"
+              className="h-[90vh] w-[90vw] rounded-lg shadow-lg"
+            />
+            {/* Nút đóng */}
+            <button
+              className="absolute top-2 right-2 bg-white rounded-full p-2 shadow hover:bg-gray-200 text-black"
+              onClick={() => setSelectedImage(null)}
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
+            
           </main>
     )
 }

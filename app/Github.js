@@ -1,3 +1,10 @@
+import github1 from "./images/github1.jpg"
+import github2 from "./images/github2.jpg"
+import github3 from "./images/github3.jpg"
+import github4 from "./images/github4.jpg"
+import github5 from "./images/github5.jpg"
+import github6 from "./images/github6.jpg"
+
 export default function Github() {
     return (
       <main className="space-y-6">
@@ -27,7 +34,7 @@ export default function Github() {
         </div>
       </section>
 
-      <section id="intro" className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+      {/* <section id="intro" className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
         <div className="grid grid-cols-1 md:grid-cols-1">
           <div className="p-6">
             <h1 className="mb-4 text-2xl font-bold">Sentient GitHub Organization</h1>
@@ -40,7 +47,7 @@ export default function Github() {
                   </section>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section id="intro" className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
         <div className="grid grid-cols-1 md:grid-cols-1">
@@ -52,6 +59,8 @@ export default function Github() {
                      <p className="mb-4 mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
                      Our open-source framework for high-performance multi-agent systems. It splits big goals into subtasks and recombines results for long-horizon reasoning.
                     </p>
+
+                    <img src={github1.src} className="rounded-md" />
                  
                   <a href="https://github.com/sentient-agi/ROMA" target="_blank" className="bg-slate-600 w-full p-[6px] rounded-[8px] mt-[20px] flex justify-center  hover:scale-[1.01] duration-300 text-[#fff]">
                   <svg height="24" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" className="mr-2">
@@ -67,6 +76,8 @@ export default function Github() {
                      <p className="mb-4 mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
                      Augments open-source LLMs with reasoning agents and a novel search tool, achieving state-of-the-art performance surpassing GPT-4o Search Preview.
                     </p>
+
+                    <img src={github2.src} className="rounded-md" />
                  
                   <a href="https://github.com/sentient-agi/OpenDeepSearch" target="_blank" className="bg-slate-600 w-full p-[6px] rounded-[8px] mt-[20px] flex justify-center  hover:scale-[1.01] duration-300 text-[#fff]">
                   <svg height="24" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" className="mr-2">
@@ -82,6 +93,8 @@ export default function Github() {
                      <p className="mb-4 mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
                      The world’s first fingerprinted AI model, co-owned by 700,000+ people. Explicitly aligned with pro-crypto and pro-freedom values, and fully open-source.
                     </p>
+
+                    <img src={github3.src} className="rounded-md" />
                  
                   <a href="https://github.com/sentient-agi/OML-1.0-Fingerprinting" target="_blank" className="bg-slate-600 w-full p-[6px] rounded-[8px] mt-[20px] flex justify-center  hover:scale-[1.01] duration-300 text-[#fff]">
                   <svg height="24" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" className="mr-2">
@@ -97,6 +110,8 @@ export default function Github() {
                      <p className="mb-4 mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
                      A cryptographic fingerprinting library that embeds undetectable, verifiable signatures into AI models for secure provenance and ownership.
                     </p>
+
+                    <img src={github4.src} className="rounded-md" />
                  
                   <a href="https://github.com/sentient-agi/OML-1.0-Fingerprinting" target="_blank" className="bg-slate-600 w-full p-[6px] rounded-[8px] mt-[20px] flex justify-center  hover:scale-[1.01] duration-300 text-[#fff]">
                   <svg height="24" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" className="mr-2">
@@ -112,6 +127,8 @@ export default function Github() {
                      <p className="mb-4 mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
                      Custom, high-fidelity benchmarks spanning industries from fair coding to crypto values and governance.
                     </p>
+
+                    <img src={github5.src} className="rounded-md" />
                  
                   <a href="https://github.com/GavinZhengOI/LiveCodeBench-Pro" target="_blank" className="bg-slate-600 w-full p-[6px] rounded-[8px] mt-[20px] flex justify-center  hover:scale-[1.01] duration-300 text-[#fff]">
                   <svg height="24" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" className="mr-2">
@@ -122,11 +139,13 @@ export default function Github() {
                   </section>
 
                   <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4">
-                    <h3>Agent Security</h3>
+                    <h1>Agent Security</h1>
                     
                      <p className="mb-4 mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
                      Research showcasing the security gaps in current open-source agent frameworks and highlighting how fine-tuned models make agents stronger
                     </p>
+
+                    <img src={github6.src} className="rounded-md" />
                  
                   <a href="https://t.co/qAzqdL6igJ" target="_blank" className="bg-slate-600 w-full p-[6px] rounded-[8px] mt-[20px] flex justify-center  hover:scale-[1.01] duration-300 text-[#fff]">
                   <svg height="24" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" className="mr-2">

@@ -97,7 +97,7 @@ export default function Builder() {
                     <span className="rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">Blockchain</span>
                     <span className="rounded-full bg-emerald-100 px-3 py-1 font-medium text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-200">Consensus</span>
                   </div>
-                  <button className="bg-slate-600 p-[6px] rounded-[8px] mt-[20px] flex justify-center w-full hover:scale-[1.01] duration-300 text-[#fff]">Link Github</button>
+                  <a href="https://github.com/sentient-agi" target="_blank" className="bg-slate-600 p-[6px] rounded-[8px] mt-[20px] flex justify-center w-full hover:scale-[1.01] duration-300 text-[#fff]">Link Github</a>
                   </section>
 
                   <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4">
@@ -111,7 +111,7 @@ export default function Builder() {
                     <span className="rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">PyTorch</span>
                     <span className="rounded-full bg-emerald-100 px-3 py-1 font-medium text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-200">Federated Learning</span>
                   </div>
-                  <button className="bg-slate-600 p-[6px] rounded-[8px] mt-[20px] flex justify-center w-full hover:scale-[1.01] duration-300 text-[#fff]">Link Github</button>
+                  <a href="https://github.com/sentient-agi" target="_blank" className="bg-slate-600 p-[6px] rounded-[8px] mt-[20px] flex justify-center w-full hover:scale-[1.01] duration-300 text-[#fff]">Link Github</a>
                   </section>
 
                   <section id="intro" className="overflow-hidden rounded-2xl mb-[20px] border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 p-4">
@@ -125,7 +125,7 @@ export default function Builder() {
                     <span className="rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200">React</span>
                     <span className="rounded-full bg-emerald-100 px-3 py-1 font-medium text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-200">Monitoring</span>
                   </div>
-                  <button className="bg-slate-600 p-[6px] rounded-[8px] mt-[20px] flex justify-center w-full hover:scale-[1.01] duration-300 text-[#fff]">Link Github</button>
+                  <a href="https://github.com/sentient-agi" target="_blank" className="bg-slate-600 p-[6px] rounded-[8px] mt-[20px] flex justify-center w-full hover:scale-[1.01] duration-300 text-[#fff]">Link Github</a>
                   </section>
           </div>
         </div>
