@@ -201,7 +201,7 @@ export default function SentientWiki() {
 
             <div className="flex items-center gap-2">
               <img src={logo.src} className="h-11 w-11 rounded-full" />
-              <span className=" text-lg font-bold">Sentient Synthetic</span>
+              <span className=" text-lg sm:block hidden font-bold">Sentient Synthetic</span>
             </div>
 
             <div className="mx-2 hidden flex-1 md:block">
@@ -238,7 +238,7 @@ export default function SentientWiki() {
               </a>
               <button disabled
                 onClick={() => setDark((d) => !d)}
-                className="rounded-2xl border border-zinc-200 px-3 py-2 text-sm font-medium hover:bg-zinc-50 dark:border-zinc-800 dark:hover:bg-zinc-800"
+                className="rounded-2xl border border-zinc-200 sm:block hidden  px-3 py-2 text-sm font-medium hover:bg-zinc-50 dark:border-zinc-800 dark:hover:bg-zinc-800"
                 aria-label="Đổi chế độ sáng/tối"
               >
                 {dark ? (

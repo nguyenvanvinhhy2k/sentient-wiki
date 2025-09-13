@@ -50,7 +50,13 @@ body {
   color: var(--foreground);
   height: 100%;
   background: var(--background);
-  font-family: Playpen Sans, cursive;
+  /* font-family: Playpen Sans, cursive; */
+}
+
+@media (min-width: 768px) {
+  body {
+    font-family: Playpen Sans, cursive;
+  }
 }
 
 /* 3D rotate y-axis */
@@ -66,9 +72,6 @@ body {
   }
 }
 
-.font-signature {
-  font-family: Dancing Script, cursive;
-}
 
 /* Ẩn scrollbar nhưng vẫn scroll được */
 .hide-scrollbar::-webkit-scrollbar {
